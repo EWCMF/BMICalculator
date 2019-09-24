@@ -2,7 +2,7 @@ import junit.framework.TestCase;
 
 public class BMICalculatorTest extends TestCase {
 
-    // Tage imod højde (m) og vægt (kg)
+    // Tager imod højde (m) og vægt (kg)
 
     public void testBmiBeregning() {
         double resultat;
@@ -31,12 +31,14 @@ public class BMICalculatorTest extends TestCase {
         assertEquals(-1.0, resultat);
     }
 
+    // Test med negativt tal
     public void testBmiBeregningNegativ() {
         double resultat;
         resultat = BMICalculator.bmiBeregning(-1, 95);
         assertEquals(-1.0, resultat);
     }
 
+    // Test med 0 vægt
     public void testBmiBeregningVaegt() {
         double resultat;
         resultat = BMICalculator.bmiBeregning(1, 0);
@@ -61,5 +63,6 @@ public class BMICalculatorTest extends TestCase {
         // Svært overvægtig
         resultat = BMICalculator.bmiBeregning(1.5, 120);
         assertEquals(53.3, resultat);
+
     }
 }
